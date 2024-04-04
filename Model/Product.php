@@ -1,6 +1,10 @@
 <?php
 
-Class Product extends Category{
+require_once "Food.php";
+require_once "Toy.php";
+require_once "Kennel.php";
+
+Class Product {
 
     public $name;
     public $price;
@@ -13,6 +17,11 @@ Class Product extends Category{
         $this->price=$price;
         $this->category = $category;
         
+    }
+
+
+    function setImage($url){
+        $this->image = $url;
     }
 
 }

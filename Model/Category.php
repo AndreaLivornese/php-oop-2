@@ -1,11 +1,14 @@
 <?php
 
+
+
 Class Category{
 
-    public $type;
+    public $type, $icon;
 
-    function __construct($type){
+    function __construct($type, $icon){
         $this->type=$type;
+        $this->icon= $icon;
     }
 
 }

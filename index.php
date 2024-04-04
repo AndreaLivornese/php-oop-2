@@ -6,18 +6,29 @@ require_once "./Model/Product.php";
 $dogCategory= new Category("Cane","fa-dog");
 $catCategory= new Category("Gatto","fa-cat");
 
-$palla= new Toy("Palla",2.5, $dogCategory,"gomma");
-$palla->setImage("./img/palla-giocattolo-per-cani.jpg");
+
+try{
+    $palla= new Toy("Palla", $dogCategory,"lalalala","gomma");
+    $palla->setImage("./img/palla-giocattolo-per-cani.jpg");
+}catch(Exception $e){
+    echo $e->getMessage();
+}
 
 // var_dump($newProduct);
-
-$kennel= new Kennel("Cuccia confort", 50.5, $dogCategory, "big", "legno molto legnoso", "marrone e verde");
-$kennel->setImage("./img/cuccia-canejpg.jpg");
+try{
+    $kennel= new Kennel("Cuccia confort", $dogCategory,50.5, "big", "legno molto legnoso", "marrone e verde");
+    $kennel->setImage("./img/cuccia-canejpg.jpg");
+}catch(Exception $e){
+    echo $e;
+}
 
 // var_dump($newKennel);
-
-$scatoletta = new Food("Scatoletta di pollo", 7.5, $catCategory,"pollo","23/05/2024","medium");
-$scatoletta->setImage("./img/scatoletta-di-pollo.jpg");
+try{
+    $scatoletta = new Food("Scatoletta di pollo", $catCategory,3.9,"pollo","23/05/2024","medium");
+    $scatoletta->setImage("./img/scatoletta-di-pollo.jpg");
+}catch(Exception $e){
+    echo $e;
+}
 
 // var_dump($scatoletta);
 

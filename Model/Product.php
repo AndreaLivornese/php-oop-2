@@ -1,13 +1,13 @@
 <?php
 
-Class Product{
+Class Product extends Category{
 
     public $name;
     public $price;
     public $image;
-    public $category;
+    public Category $category;
 
-    function __construct($name, $price, $category){
+    function __construct($name, $price, Category $category){
 
         $this->name=$name;
         $this->price=$price;
